@@ -5,7 +5,6 @@ import json
 
 app = FastAPI()
 
-
 class HealthcareProvider(BaseModel):
     providerID: int = Field(..., ge=0, description="identifier id")
     active: bool = Field(True, example=True,
@@ -16,7 +15,7 @@ class HealthcareProvider(BaseModel):
                                description="Comma separated qualification of the provider")
     speciality: str = Field(..., example="speciality1, speciality2",
                             description="Comma separated specialities")
-    phone: str = Field(..., example="9876543210", max_length=15,
+    phone: str = Field(..., regex="/^([+]\d{2})?\d{10}$/" , example="9876543210", max_length=15,
                        description="Number of Provider")
     department: Optional[str] = Field(
         None, example="depName", description="Department, if applicable")

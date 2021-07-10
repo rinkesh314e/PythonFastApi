@@ -1,0 +1,30 @@
+{% extends 'base.html' %} {% block content %}
+<nav class="search-bar justify-content-between">
+    <form class="form-inline" method="post">
+      <input
+        class="form-control mr-sm-2"
+        type="number"
+        placeholder="Enter Provider Id"
+        aria-label="Search"
+        name="p_id"
+        required
+      />
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+        Delete
+      </button>
+    </form>
+  </nav>
+  {% if response %}
+    {% if response == "200" %}
+    <dl class="all-cols">
+      <dt class="all-cols-keys">200-OK</dt>
+    <dd class="all-cols-values">Provider information successfully deleted</dd>
+    </dl>
+    {% else %}
+    <dl class="all-cols">
+      <dt class="all-cols-keys">404_Error</dt>
+    <dd class="all-cols-values">Provider Id not found</dd>
+    </dl>
+    {% endif %}
+  {% endif %}
+{% endblock %}

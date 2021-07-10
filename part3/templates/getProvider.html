@@ -1,0 +1,31 @@
+{% extends 'base.html' %} {% block content %}
+{% if data==None %}
+<dl class="all-cols">
+  <dt class="all-cols-keys">404_Error</dt>
+<dd class="all-cols-values">Provider Id not found</dd>
+</dl>
+{% else %}
+<dl class="all-cols">
+  <dt class="all-cols-keys">ProviderId</dt>
+  <dd class="all-cols-values">{{ data["providerID"] }}</dd>
+  <dt class="all-cols-keys">Active</dt> 
+  <dd class="all-cols-values">{{ data["active"] }}</dd>
+  <dt class="all-cols-keys">Name</dt> 
+  <dd class="all-cols-values">{{ data["name"] }}</dd>
+  <dt class="all-cols-keys">Qualification</dt>
+  <dd class="all-cols-values">{{ data["qualification"] }}</dd>
+  <dt class="all-cols-keys">Speciality</dt>
+  <dd class="all-cols-values">{{ data["speciality"] }}</dd>
+  <dt class="all-cols-keys">Phone</dt> 
+  <dd class="all-cols-values">{{ data["phone"] }}</dd>
+  <dt class="all-cols-keys">Department</dt>
+  <dd class="all-cols-values">{{ data["department"] }}</dd>
+  <dt class="all-cols-keys">Organization</dt>
+  <dd class="all-cols-values">{{ data["organization"] }}</dd>
+  <dt class="all-cols-keys">Location</dt>
+  <dd class="all-cols-values">{{ data["location"] }}</dd>
+  <dt class="all-cols-keys">Address</dt> 
+  <dd class="all-cols-values">{{ data["address"] }}</dd>
+</dl>
+{% endif %}
+{% endblock %}

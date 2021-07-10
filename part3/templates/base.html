@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HealthcareApi</title>
+  <!-- CSS only -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="{{ url_for('static', path='/style.css') }}" />
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active" href="{{ url_for('get_healthcare_providers') }}">View All Providers</a>
+        <a class="nav-item nav-link active" href="{{ url_for('provider_search') }}">View Provider</a>
+        <a class="nav-item nav-link active" href="{{ url_for('add_healthcare_provider_form') }}">Add Providers</a>
+        <a class="nav-item nav-link active" href="{{ url_for('update_healthcare_provider_form') }}">Update Providers</a>
+        <a class="nav-item nav-link active" href="{{ url_for('delete_healthcare_provider_form') }}">Delete Providers</a>
+      </div>
+  </nav>
+  <div id="content">{% block content %}{% endblock %}</div>
+    <!-- <div id="footer">
+        {% block footer %}
+        <a href="http://domain.invalid/">rinkesh</a>
+        {% endblock %}
+    </div> -->
+</body>
+</html>
+

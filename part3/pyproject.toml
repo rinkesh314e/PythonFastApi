@@ -12,6 +12,7 @@ uvicorn = "^0.14.0"
 Jinja2 = "^3.0.1"
 aiofiles = "^0.7.0"
 python-multipart = "^0.0.5"
+requests = "^2.25.1"
 
 [tool.poetry.dev-dependencies]
 

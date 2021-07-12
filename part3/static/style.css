@@ -21,14 +21,37 @@ body {
 }
 
 .navbar {
-  font-size: 25px;
-}
-
-.navbar-nav {
+  margin: 5px -1em;
   display: flex;
   justify-content: space-evenly;
-  background-color: #f8f9fa;
+  font-size: 30px;
 }
+
+#endpoint1 {
+  margin-left: -4em;
+  padding-left: 4em;
+}
+
+
+#endpoint2 {
+  padding-left: 4em;
+}
+
+
+#endpoint3 {
+  padding-left: 4em;
+}
+
+
+#endpoint4 {
+  padding-left: 4em;
+}
+
+
+#endpoint5 {
+  padding-left: 4em;
+}
+
 
 .input-group {
   margin-top: 2em;

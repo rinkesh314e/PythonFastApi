@@ -1,5 +1,6 @@
 {% extends 'base.html' %} {% block content %}
-<nav class="search-bar justify-content-between">
+  {% if flag == 1 %}
+  <nav class="search-bar justify-content-between">
     <form class="form-inline" method="post">
       <input
         class="form-control mr-sm-2"
@@ -14,7 +15,85 @@
       </button>
     </form>
   </nav>
-  <div class="update-form">
-      
-
+  {% else %}
+  {% if post==None %}
+  <dl class="all-cols">
+      <dt class="all-cols-keys">404_Error</dt>
+    <dd class="all-cols-values">Provider Id not found</dd>
+    </dl>
+  {% else %}
+  <p class="grid-cells title-name">Enter the new details for: {{ p_id }}</p>
+  <form method="post" action="{{ url_for('update_healthcare_provider_formid') }}">
+      <div class="form-group row">
+        <label for="inputEmail3" class="col-sm-2 col-form-label">ProviderId</label>
+        <div class="col-sm-10">
+          <input type="number" name="providerID" value="{{ post['providerID'] }}" class="form-control" placeholder="ProviderId" readonly>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="inputPassword3" class="col-sm-2 col-form-label">Active</label>
+        <div class="col-sm-10">
+          <input type="text" name="active" value="{{ post['active'] }}"" class="form-control" placeholder="Active">
+        </div>
+      </div>
+      <div class="form-group row">
+          <label for="inputPassword3" class="col-sm-2 col-form-label">Name</label>
+          <div class="col-sm-10">
+            <input type="text" name="name" value="{{ post['name'] }}" class="form-control"  placeholder="Name" required>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="inputPassword3" class="col-sm-2 col-form-label">Qualification</label>
+          <div class="col-sm-10">
+            <input type="text" name="qualification" value="{{ post['qualification'] }}" class="form-control"  placeholder="Qualification" required>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="inputPassword3" class="col-sm-2 col-form-label">Speciality</label>
+          <div class="col-sm-10">
+            <input type="text" name="speciality" value="{{ post['speciality'] }}" class="form-control"  placeholder="Speciality" required>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="inputPassword3" class="col-sm-2 col-form-label">Phone</label>
+          <div class="col-sm-10">
+            <input maxlength="15"
+            name="phone"
+            pattern="(\+?[\d]{2})?[\d]{10}"
+            class="form-control" name="phone" value="{{ post['phone'] }}" class="form-control"  placeholder="Phone" required>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="inputPassword3" class="col-sm-2 col-form-label">Department</label>
+          <div class="col-sm-10">
+            <input type="text" name="department" value="{{ post['department'] }}" class="form-control"  placeholder="Department">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="inputPassword3" class="col-sm-2 col-form-label">Organization</label>
+          <div class="col-sm-10">
+            <input type="text" name="organization" value="{{ post['organization'] }}" class="form-control"  placeholder="Organization" required>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="inputPassword3" class="col-sm-2 col-form-label">Location</label>
+          <div class="col-sm-10">
+            <input type="text" name="location" value="{{ post['location'] }}" class="form-control"  placeholder="Location">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="inputPassword3" class="col-sm-2 col-form-label">Address</label>
+          <div class="col-sm-10">
+            <input type="text" name="address" value="{{ post['address'] }}" class="form-control"  placeholder="Address" required>
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-sm-10">
+            <button type="submit" class="btn btn-primary">UPDATE</button>
+          </div>
+        </div>
+    </form>
+    </div>
+  {% endif %}
+  {% endif %}
 {% endblock %}

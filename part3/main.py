@@ -31,8 +31,7 @@ def get_healthcare_provider(p_id: int):
     healthcare_providers = read_json()
     if healthcare_providers.get(str(p_id), None) is None:
         raise HTTPException(status_code=404, detail="ProviderID not found")
-    result = healthcare_providers.get(str(p_id), None)
-    return result
+    return healthcare_providers[str(p_id)]
 
 
 @ app.post('/providers/')

@@ -15,14 +15,14 @@
     </form>
   </nav>
   {% if response %}
-    {% if response == "200" %}
+    {% if response == 200 %}
     <dl class="all-cols">
-      <dt class="all-cols-keys">200-OK</dt>
+      <dt class="all-cols-keys">{{ response }}_OK</dt>
     <dd class="all-cols-values">Provider information successfully deleted</dd>
     </dl>
     {% else %}
     <dl class="all-cols">
-      <dt class="all-cols-keys">404_Error</dt>
+      <dt class="all-cols-keys">{{ response }}_Error</dt>
     <dd class="all-cols-values">Provider Id not found</dd>
     </dl>
     {% endif %}

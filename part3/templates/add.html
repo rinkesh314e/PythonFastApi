@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% block content %}
 <form
   method="post"
-  action="{{ url_for('add_healthcare_provider') }}"
+  action="{{ url_for('add_healthcare_provider_form') }}"
   id="addProvider"
 >
   <div class="form-group row">
@@ -137,4 +137,17 @@
     </div>
   </div>
 </form>
+{% if flag != 1 %}
+{% if data == 200 %}
+<dl class="all-cols">
+  <dt class="all-cols-keys">{{ data }}_OK</dt>
+<dd class="all-cols-values">Provider information successfully added</dd>
+</dl>
+{% else %}
+<dl class="all-cols">
+  <dt class="all-cols-keys">{{ data }}_ERROR</dt>
+<dd class="all-cols-values">Provider not Added.Check the fields.</dd>
+</dl>
+{% endif %}
+{% endif %}
 {% endblock %}

@@ -8,7 +8,7 @@ class HealthcareProvider(BaseModel):
     name: str = Field(..., description="Name of the Provider")
     qualification: str = Field(..., description="Comma separated qualification of the provider")
     speciality: str = Field(..., description="Comma separated specialities")
-    phone: str = Field(..., max_length=15, regex="(\+[\d]{2})?[\d]{10}", description="Number of Provider")
+    phone: str = Field(..., max_length=15, regex="(\+?[\d]{2})?[\d]{10}", description="Number of Provider")
     department: Optional[str] = Field(None, example="depName", description="Department, if applicable")
     organization: str = Field(..., description="Name of the Hospital/Clinic of the Provider")
     location: Optional[str] = Field(None, description="Location, if multiple locations")
@@ -17,7 +17,8 @@ class HealthcareProvider(BaseModel):
     class Config:
         schema_extra = {
             "example": {
-                "active": True,
+                "providerID": "UniqueIds",
+                "active": "True",
                 "name": "Jon Doe",
                 "qualification": "MBBS, MD",
                 "speciality": "Surgery, Diagnostician",

@@ -1,2 +1,4 @@
 *.json
 *.pyc
+generate_data.py
+

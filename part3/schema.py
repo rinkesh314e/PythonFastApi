@@ -1,9 +1,10 @@
 from pydantic import BaseModel, Field
 from typing import Optional
+from uuid import UUID
 
 
 class HealthcareProvider(BaseModel):
-    providerID: int = Field(..., ge=0, description="identifier id")
+    providerID: UUID = Field(..., description="identifier id")
     active: Optional[bool] = Field(True, description="Record in active use or not")
     name: str = Field(..., description="Name of the Provider")
     qualification: str = Field(..., description="Comma separated qualification of the provider")

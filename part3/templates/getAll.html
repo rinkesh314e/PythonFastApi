@@ -1,26 +1,28 @@
 {% extends "base.html" %} {% block content %}
-<div class="all-rows">
-  <p class="grid-cells title-name">ProviderId</p>
-  <p class="grid-cells title-name">Active</p>
-  <p class="grid-cells title-name">Name</p>
-  <p class="grid-cells title-name">Qualification</p>
-  <p class="grid-cells title-name">Speciality</p>
-  <p class="grid-cells title-name">Phone</p>
-  <p class="grid-cells title-name">Department</p>
-  <p class="grid-cells title-name">Organization</p>
-  <p class="grid-cells title-name">Location</p>
-  <p class="grid-cells title-name">Address</p>
-  {% for item in data.values() %}
-  <p class="grid-cells column-value">{{ item["providerID"] }}</p>
-  <p class="grid-cells column-value">{{ item["active"] }}</p>
-  <p class="grid-cells column-value">{{ item["name"] }}</p>
-  <p class="grid-cells column-value">{{ item["qualification"] }}</p>
-  <p class="grid-cells column-value">{{ item["speciality"] }}</p>
-  <p class="grid-cells column-value">{{ item["phone"] }}</p>
-  <p class="grid-cells column-value">{{ item["department"] }}</p>
-  <p class="grid-cells column-value">{{ item["organization"] }}</p>
-  <p class="grid-cells column-value">{{ item["location"] }}</p>
-  <p class="grid-cells column-value">{{ item["address"] }}</p>
-  {% endfor %}
+<div class="all-entries">
+  <div class="all-rows">
+    <p class="grid-cells title-name">ProviderId</p>
+    <p class="grid-cells title-name">Active</p>
+    <p class="grid-cells title-name">Name</p>
+    <p class="grid-cells title-name">Qualification</p>
+    <p class="grid-cells title-name">Speciality</p>
+    <p class="grid-cells title-name">Phone</p>
+    <p class="grid-cells title-name">Department</p>
+    <p class="grid-cells title-name">Organization</p>
+    <p class="grid-cells title-name">Location</p>
+    <p class="grid-cells title-name">Address</p>
+    {% for item in data.values() %}
+    <p class="grid-cells column-value">{{ item["providerID"] }}</p>
+    <p class="grid-cells column-value">{{ item["active"] }}</p>
+    <p class="grid-cells column-value">{{ item["name"] }}</p>
+    <p class="grid-cells column-value">{{ item["qualification"] }}</p>
+    <p class="grid-cells column-value">{{ item["speciality"] }}</p>
+    <p class="grid-cells column-value">{{ item["phone"] }}</p>
+    <p class="grid-cells column-value">{{ item["department"] }}</p>
+    <p class="grid-cells column-value">{{ item["organization"] }}</p>
+    <p class="grid-cells column-value">{{ item["location"] }}</p>
+    <p class="grid-cells column-value">{{ item["address"] }}</p>
+    {% endfor %}
+  </div>
 </div>
 {% endblock %}

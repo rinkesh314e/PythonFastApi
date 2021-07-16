@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="{{ url_for('static', path='/style.css') }}" />
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" id="topnav">
       <div class="navbar-nav">
         <a
           class="nav-item nav-link active" id="endpoint1"
@@ -42,6 +42,10 @@
           href="{{ url_for('delete_healthcare_provider_form') }}"
           >Delete Providers</a
         >
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
       </div>
     </nav>
     <div id="content">{% block content %}{% endblock %}</div>
